@@ -32,7 +32,7 @@ function createBoard(){
     turnText.id = 'turnText'
     turnText.innerText = ' Time for ' + turn + '!!!'
     document.body.appendChild(turnText)
-    document.body.appendChild(table)
+    document.body.appendChild(table) 
 }
 
 function clickCell(target) {
@@ -45,8 +45,15 @@ function clickCell(target) {
 }
 
 function changeTurn() {
-    if (turn == 'circle') { turn = 'cross'}     
+    if (turn == 'circle') 
+    { 
+        turn = 'cross'
+    }     
     else {turn = 'circle'}
+    changeTurnText()
+}
+function changeTurnText() {
+    document.getElementById('turnText').innerText = ' Time for ' + turn + '!!!'
 }
 
 start()
